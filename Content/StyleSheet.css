@@ -1,0 +1,70 @@
+﻿body{
+   text-align:center; /*For IE6 Shenanigans*/
+   background-image: url('/Content/WallboardDesign.png');
+   background-size: 100%;
+   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+        font-c
+}
+
+td {
+    vertical-align:top;
+    /*text-align:center;*/
+}
+
+input {
+    background-color: white;
+    border-color: gray;
+    border-style:outset;
+    color:#333399;
+}
+
+a, a:hover, a:visited, a:link, a:active{
+    font-weight:bold;
+    text-decoration:none;
+    color:#CCCCCC;
+}
+
+#parent {
+    padding: 5% 0;
+}
+
+#child {
+    padding: 10% 0;
+}
+
+/*Style til selve wallboard. Evt. størrelse som her*/
+.wallboard{
+    font-size:30px;
+    table-layout:fixed;
+}
+
+.error{
+    color:red;
+}
+.tabHeader{
+    color:#666666;
+}
+
+.title{
+    font-weight:bold;
+}
+
+/*Style for Fokus produkt på wallboard*/
+.focus{
+    color: green;
+    font-weight: bolder;
+}
+
+.targets{
+    font-weight: bold;
+}
+
+.level1 {
+    background-image: url('/Content/ButtonComplete1.png');
+}
+.level2 {
+    background-image: url('/Content/ButtonComplete2.png');
+}
+.level3 {
+    background-image: url('/Content/ButtonComplete3.png');
+}

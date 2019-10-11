@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Wallboard</title>
+    <link href="~/Content/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <table style="width:100%;">
+            <tr>
+                <td style="width:20%;"></td>
+                <td style="width:60%;">
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            
+                        </asp:ContentPlaceHolder><br />
+                        <br />
+                        <asp:LoginView ID="lgnvwMain" runat="server">
+                            <AnonymousTemplate>
+                                <asp:HyperLink ID="hplLogin" runat="server" NavigateUrl="~/login.aspx">Log ind</asp:HyperLink>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <asp:ContentPlaceHolder ID="cphNavigation" runat="server">
+
+                                </asp:ContentPlaceHolder><br />
+                                <asp:Button ID="btnAdminMenu" runat="server" Width="150px" Visible='<%# Roles.IsUserInRole("Admin") %>' Text="Admin menu" OnClick="btnAdminMenu_Click" /><br />
+                                <span style="color:white;">Logget ind som <asp:LoginName Font-Bold="true" ID="LoginName1" runat="server" /></span><br />
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="RedirectToLoginPage" />
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                </td>
+                <td style="width:20%;"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
